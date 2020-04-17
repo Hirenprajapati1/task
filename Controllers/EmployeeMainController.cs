@@ -36,6 +36,15 @@ namespace task1.Controllers
         [HttpPost]
         public ActionResult AddEmployees(EmployeeModel emp)
         {
+            DepartmentRepository departmentRepository = new DepartmentRepository();
+            var department = departmentRepository.GetDepartments();
+            ViewBag.Data1 = department;
+
+            DesignationRepository designationRepository = new DesignationRepository();
+            var Designation = designationRepository.GetDesignations();
+            ViewBag.Data = Designation;
+
+
             EmployeeRepository EmployeeRepositoryObject = new EmployeeRepository();
             //AddEmployee AddEmployeeObject = new AddEmployee();
             if (EmployeeRepositoryObject.AddEmployeeData(emp))
@@ -79,10 +88,7 @@ namespace task1.Controllers
             var Designation = designationRepository.GetDesignations();
             ViewBag.Data = Designation;
 
-
             return View(EmployeeRepositoryObject.GetEmployees().Find(asd => asd.ID == ID));
-
-
 
         }
 

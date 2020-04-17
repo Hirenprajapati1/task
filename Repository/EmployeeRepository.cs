@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using task1.Models;
+using task1.Repository;
 
 
 namespace task1.Repository
