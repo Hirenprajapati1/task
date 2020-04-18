@@ -48,7 +48,7 @@ namespace task1.Repository
             SqlConnection sc = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = database1; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
             List<EmployeeModel> s2 = new List<EmployeeModel>();
 
-            SqlDataAdapter sa = new SqlDataAdapter("GetEmployee1", sc);
+            SqlDataAdapter sa = new SqlDataAdapter("GetEmployee2", sc);
             DataTable dt = new DataTable();
             sa.SelectCommand.CommandType = CommandType.StoredProcedure;
             sc.Open();
@@ -64,8 +64,10 @@ namespace task1.Repository
                         Email = Convert.ToString(dr["Email"]),
                         EmployeeCode = Convert.ToString(dr["EmployeeCode"]),
                         Gender = Convert.ToString(dr["Gender"]),
-                        Designation = Convert.ToInt32(dr["Designation"]),
-                        Department = Convert.ToInt32(dr["Department"]),
+                        //Designation = Convert.ToInt32(dr["Designation"]),
+                        DesignationName=Convert.ToString(dr["DesignationName"]),
+                        //Department = Convert.ToInt32(dr["Department"]),
+                        DepartmentName = Convert.ToString(dr["DepartmentName"]),
                         DOB = Convert.ToDateTime(dr["DOB"]),
                         Salary = Convert.ToInt32(dr["Salary"])
                     }

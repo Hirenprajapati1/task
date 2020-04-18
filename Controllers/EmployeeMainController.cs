@@ -87,7 +87,7 @@ namespace task1.Controllers
             DesignationRepository designationRepository = new DesignationRepository();
             var Designation = designationRepository.GetDesignations();
             ViewBag.Data = Designation;
-
+            EmployeeRepository st = new EmployeeRepository();
             return View(EmployeeRepositoryObject.GetEmployees().Find(asd => asd.ID == ID));
 
         }

@@ -29,11 +29,11 @@
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
                 <div class="form-control">
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input asp-for="Gender" type="radio" id="male" name="gender" value="male">
                     <label for="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" id="female" name="gender" value="female">
+                    <input asp-for="Gender" type="radio" id="female" name="gender" value="female">
                     <label for="female">Female</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" id="other" name="gender" value="other">
+                    <input asp-for="Gender" type="radio" id="other" name="gender" value="other">
                     <label for="other">Other</label>
                 </div>
                 @*<input asp-for="Gender" class="form-control" />*@
